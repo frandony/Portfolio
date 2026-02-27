@@ -1,0 +1,386 @@
+*{  margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;}
+/* ================= HEADER ================= */
+header {
+    height: 80px; /* altura fixa */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background-color: black;
+    color: whitesmoke;
+    
+}
+
+header img {
+    width: 200px;
+}
+
+header ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 50px;
+}
+
+header li {
+    letter-spacing: 4px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 20px;
+}
+
+header li:hover {
+    opacity: 0.7;
+}
+
+
+/* ================= WELCOME ================= */
+.WELCOME {
+    position: relative;
+    background-image: url(Assets/Background-Image.PNG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+    color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: fade 1.2s ease-in-out;
+}
+
+/* Overlay escuro */
+.WELCOME::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 0;
+}
+
+/* Mantém conteúdo acima do overlay */
+.WELCOME * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Título principal */
+.WELCOME h1 {
+    font-size: clamp(32px, 6vw, 60px);
+    margin: 40px 0;
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.8);
+    
+}
+
+/* Subtítulo */
+.WELCOME p {
+    margin: 5px 0;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+.welcome-text {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+.welcome-text {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Linha */
+.welcome-text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+    background: white;
+
+    transform: translateX(-50%);
+    animation: growLine 1s ease forwards;
+    animation-delay: 1s;
+}
+
+/* Texto sobe suavemente */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Linha cresce do centro */
+@keyframes growLine {
+    to {
+        width: 80%;
+    }
+}
+
+/* ================= ICONES ================= */
+#Imagens-de-contato {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+#Imagens-de-contato img {
+    width: 35px;
+    filter: invert(1);
+    transition: 0.3s ease;
+}
+
+#Imagens-de-contato img:hover {
+    transform: translateY(-6px);
+    opacity: 0.8;
+}
+
+/* ================= SCROLL ================= */
+.scroll {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 24px;           
+    letter-spacing: 4px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+
+.scroll::after {
+    content: "";
+    width: 2px;
+    height: 150px;             
+    background: white;
+    margin-top: 20px}
+
+#sobre-mim {
+    padding: 100px 10%;
+    text-align: center;
+    background: black;
+    color: whitesmoke;
+}
+
+#sobre-mim h1 {
+    font-family:'Times New Roman', Times, serif, sans-serif;
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+#sobre-mim h1::after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 3px;
+    background: #3498db;
+    margin: 15px auto 0;
+
+    animation: lineGrow 0.9s ease forwards;
+}
+
+@keyframes lineGrow {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+#sobre-mim p {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+
+/* Cards das tecnologias */
+.cards-de-imagem {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.cards-de-imagem img {
+
+    width: 70px;
+    transition: 0.3s ease;
+    
+}
+
+.cards-de-imagem img:hover {
+    transform: scale(1.15);
+}
+
+/* ================= PROJETOS ================= */
+
+/* ================= PROJETOS ================= */
+
+#projetos {
+    width: 100%;
+    padding: 70px 8%;
+    background: black;
+    text-align: center;
+    color: white;
+}
+
+/* Título */
+#projetos h1 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+#projetos h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #3498db;
+    margin: 15px auto 0;
+}
+
+/* Layout dos projetos */
+.projeto {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 70px;
+    padding: 40px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(6px);
+}
+
+/* Linha lateral decorativa */
+.projeto::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    width: 4px;
+    height: 80%;
+    background: linear-gradient(to bottom, #3498db, transparent);
+    border-radius: 5px;
+}
+
+/* Alternado */
+.projeto.reverso {
+    flex-direction: row-reverse;
+}
+
+.projeto.reverso::before {
+    left: auto;
+    right: -20px;
+}
+
+/* IMAGEM */
+.projeto img {
+    width: 520px;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+.projeto img:hover {
+    transform: scale(1.03);
+}
+
+/* Glow animado */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 28px rgba(52, 152, 219, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
+    }
+}
+
+/* Texto */
+.texto {
+    max-width: 500px;
+    text-align: left;
+}
+
+.texto h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.texto p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+/* Link */
+.texto a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.texto a:hover {
+    border-bottom: 2px solid #3498db;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .projeto {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .projeto.reverso {
+        flex-direction: column;
+    }
+
+    .projeto::before,
+    .projeto.reverso::before {
+        display: none;
+    }
+
+    .texto {
+        text-align: center;
+    }
+
+    .projeto img {
+        width: 100%;
+        height: auto;
+        animation: none;
+    }
+}
